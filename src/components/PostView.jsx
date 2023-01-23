@@ -34,7 +34,7 @@ function Card(props) {
             // console.log('update Post', updatePost);
             setUpdatePost(updatePost);
             // sending to backend
-            Axios.patch(`http://localhost:5000/PostView/${id}`, updatePost)
+            Axios.patch(`https://instaclone-backend-ktqj.onrender.com/PostView/${id}`, updatePost)
             .then((res) => {
                 console.log(res.data);
                 window.location.reload();
@@ -49,7 +49,7 @@ function Card(props) {
             // console.log(updatePost);
             setUpdatePost(updatePost);
             // sending to backend
-            Axios.patch(`http://localhost:5000/PostView/${id}`, updatePost)
+            Axios.patch(`https://instaclone-backend-ktqj.onrender.com/PostView/${id}`, updatePost)
             .then((res) => {
                 console.log(res.data);
                 window.location.reload();
@@ -62,7 +62,7 @@ function Card(props) {
 
     const deletePostHandler = (e, id) => {
         console.log(id);
-        Axios.delete(`http://localhost:5000/PostView/${id}`)
+        Axios.delete(`https://instaclone-backend-ktqj.onrender.com/PostView/${id}`)
             .then(res => console.log(res.data))
         // .catch(error => console.log(error));
         window.location.reload();
@@ -121,7 +121,7 @@ export default function PostView() {
     }, [])
 
     const loadData = () => {
-        Axios.get('http://localhost:5000/PostView').then((res) => {
+        Axios.get('https://instaclone-backend-ktqj.onrender.com/PostView').then((res) => {
             // console.log(res.data);
             setData(res.data)
         })
